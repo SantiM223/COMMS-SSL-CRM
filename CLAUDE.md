@@ -6,19 +6,19 @@ Gestiona comunicaciones push via Braze con un sistema
 de franjas horarias y priorización por catálogo.
 
 ## Stack
-- Next.js 14 App Router
+- Next.js 16 App Router
 - Tailwind CSS
 - NextAuth.js con Okta (auth)
 - PostgreSQL (CRUD de comunicaciones)
 - Snowflake (dashboard, read-only)
-- Google Sheets API (Deals de Trade)zl
+- Google Sheets API (Deals de Trade)
 
 ## Módulos
 1. Login con Okta → roles: Admin, CRM Analyst, Viewer
 2. Dashboard → resultados de campañas desde Snowflake
 3. Deals de Trade → deals disponibles desde Google Sheets
 4. Comunicaciones → calendario semanal + priorizador de franjas
-5. Config. Franjas → CRUD de franjas horarias
+5. Campañas → plantillas y comms manuales segmentadas a una base específica (alcance por definir)
 
 ## Estructura de datos clave
 - Franja: nombre, hora_inicio, max_pushes, color
@@ -56,7 +56,7 @@ de franjas horarias y priorización por catálogo.
 - feat/dashboard → módulo de resultados
 - feat/comunicaciones → calendario y priorizador
 - feat/deals-trade → integración Google Sheets
-- feat/franjas → configuración de franjas
+- feat/campanas → plantillas y comms manuales
 
 ## Lo que NO hacer
 - No pushear directo a main
