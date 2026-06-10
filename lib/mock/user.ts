@@ -20,7 +20,4 @@ export const MOCK_USER: User = {
   country: "Colombia",
 };
 
-/** Permisos derivados del rol. Viewer es solo lectura. */
-export function canEdit(role: Role): boolean {
-  return role === "Admin" || role === "CRM Analyst";
-}
+// Los permisos por rol viven en @/lib/auth/permissions (can / canEdit).

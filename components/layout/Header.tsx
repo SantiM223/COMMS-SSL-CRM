@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { ChevronDown, Search } from "lucide-react";
 import { NAV_ITEMS } from "@/lib/nav";
-import { MOCK_USER } from "@/lib/mock/user";
+import { useCurrentUser } from "@/lib/auth/useCurrentUser";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { RoleBadge } from "./RoleBadge";
 
@@ -19,7 +19,7 @@ function useCurrentModule() {
 
 export function Header() {
   const current = useCurrentModule();
-  const user = MOCK_USER;
+  const user = useCurrentUser();
   const initials = user.name
     .split(" ")
     .map((n) => n[0])
